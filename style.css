@@ -1,86 +1,147 @@
-* {  
-  margin: 0;  
-  padding: 0;  
-  background-color: #000;  
-  color: white;
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #E5E7EB;
+  
+
 }
 
-h1 {  
-  writing-mode: vertical-lr;  
-  color: #E5E7EB;  
-  font-family: "Indie Flower", cursive;  
-  font-weight: 900;  
-  font-style: normal;  
-  font-size: 70px;
+h1 {
+  font-family: "Birthstone", cursive;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 60px;
+  margin-top: 50px; 
+  text-align: center;
 }
 
-.container {  
-  margin: 2% 10%;  
-  display: flex;  
-  flex-direction: column; /* Aligns children vertically */  
-  align-items: center; /* Centers elements horizontally */  
+.container {
+  margin: 2% 10%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
   margin-bottom: 20px;
+  
 }
 
-.recipedisplay {  
-  margin: 40px 70px 50px;  
-  font-family: Verdana, Geneva, Tahoma, sans-serif;  
-  text-align: center; /* Centers text in the container */  
-  max-width: 800px; /* Limits the width for better alignment */
+.recipedisplay {
+  margin: 40px 70px 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center; 
+  max-width: 800px; 
 }
 
-.recipedisplay h2 {  
-  margin-bottom: 20px; /* Space between the title and image */  
-  font-family: "Indie Flower", cursive;  
-  text-align: center; /* Ensures the title is centered */
+.recipedisplay h2 {
+  margin-bottom: 20px; 
+  font-family: "Indie Flower", cursive;
+
 }
 
-.recipedisplay img {  
-  max-width: 100%; /* Ensures the image fits the container */  
-  height: auto; /* Maintains aspect ratio */
+.recipedisplay img {
+  max-width: 100%; 
+  height: auto; 
 }
 
-.ingredient {  
-  font-weight: bold;  
-  text-align: left; /* Aligns ingredients to the left */
+.ingredient {
+  font-weight: bold;
+  text-align: left; 
+  line-height: 1.6
 }
 
-.instructions {  
-  text-align: justify; /* Justifies the text for instructions */
+.instructions {
+  text-align: justify; 
+  line-height: 1.6
 }
 
-p {  
-  list-style-type: none;  
-  padding-left: 0;  
-  margin-bottom: 15px; /* Adds spacing between paragraphs */  
-  display: block; /* Ensures text behaves like a block */
+p {
+  font-family: "Birthstone", cursive;
+  list-style-type: none;
+  padding-left: 0;
+  display: block; 
+  margin-bottom: 2em;
+ 
 }
 
-h3 {  
-  text-decoration: underline;  
+h3 {
+  text-decoration: underline;
   text-decoration-style: solid;
 }
 
-.btnRandom {  
-  background-color: #008CBA;    
-  border: none;    
-  color: white;    
-  padding: 15px 32px;    
-  text-align: center;    
-  text-decoration: none;    
-  display: inline-block;    
-  font-size: 16px;    
-  margin: 4px 2px;    
-  transition-duration: 0.4s;    
+.container {
+  text-align: center; 
+}
+
+
+.btnRandom {
+  justify-content: center; 
+  align-items: center;
+  padding: 1.5em 4em; 
+  font-size: 25px; 
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
   cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  text-align: center;
+  margin: 3rem
+  
 }
 
-.btnRandom:hover {  
-  background-color: white;  
-  color: black;  
-  box-shadow: 0px 0px 10px #00CED1;
+.btnRandom:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
-.with-shadow {  
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.btnRandom:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
